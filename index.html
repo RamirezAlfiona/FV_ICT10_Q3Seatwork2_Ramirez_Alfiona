@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intrams Teams</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background: linear-gradient(
+                135deg,
+                #fff3c4,   /* soft yellow */
+                #dbe9ff,   /* soft blue */
+                #dff5e5,   /* soft green */
+                #fde2e2    /* soft red */
+            );
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card{
+            background-color: #ffffff;
+            padding: 25px 30px;
+            border-radius: 15px;
+            width: 360px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            border-top: 8px solid #f6d365; /* soft yellow accent */
+        }
+        h1{
+            text-align: center;
+            color: #5b8def; /* soft blue */
+            margin-bottom: 20px;
+        }
+        p{
+            color: #5fa777; /* soft green */
+            font-weight: 600;
+        }
+        label{
+            color: #444;
+        }
+        input[type="radio"]{
+            accent-color: #e88b8b; /* muted red */
+        }
+        select{
+            width: 100%;
+            padding: 8px;
+            border-radius: 8px;
+            border: 2px solid #c7dbff;
+            margin-top: 5px;
+            background-color: #fafafa;
+        }
+        button{
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            background: linear-gradient(
+                to right,
+                #f6d365,
+                #9ab7f5,
+                #8fd3a6,
+                #f3a6a6
+            );
+            color: #ffffff;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        button:hover{
+            transform: scale(1.03);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+        #output{
+            margin-top: 15px;
+            text-align: center;
+            font-weight: bold;
+            color: #e88b8b;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="card">
+        <h1>Intramurals Team</h1>
+
+        <form>
+            <p>Are you done with the online registration?</p>
+                <input type="radio" id="registrationyes" name="registration" value="yes">
+                <label for="registrationyes">Yes</label><br>
+                <input type="radio" id="registrationno" name="registration" value="no">
+                <label for="registrationno">No</label><br><br>
+
+            <p>Do you have the medical clearance from the clinic?</p>
+                <input type="radio" id="medicalyes" name="medical" value="yes">
+                <label for="medicalyes">Yes</label><br>
+                <input type="radio" id="medicalno" name="medical" value="no">
+                <label for="medicalno">No</label><br><br>
+
+            <label for="grade">What's your grade?</label><br><br>
+                <select id="grade" required>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select><br><br>
+
+            <label for="section">Section</label><br><br>
+                <select id="section" required>
+                    <option value="emerald">Emerald</option>
+                    <option value="jade">Jade</option>
+                    <option value="ruby">Ruby</option>
+                    <option value="sapphire">Sapphire</option>
+                    <option value="topaz">Topaz</option>
+                </select><br><br>
+
+            <button type="button" py-click="signup">Sign up</button>
+        </form>
+
+        <div id="output"></div>
+        <img id="teamImage" style="display:none; width:160px; margin:15px auto 0;">
+    </div>
+
+    <script type="py" src="main.py"></script>
+</body>
+</html>
